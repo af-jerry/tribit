@@ -140,7 +140,7 @@ body[data-theme="dark"] .lb3 { background: var(--p-200); }
   transition: box-shadow 0.3s;
 }
 
-.brand { display: inline-flex; align-items: center; gap: 9px; text-decoration: none; }
+.brand { display: inline-flex; align-items: center; gap: 9px; text-decoration: none; flex-shrink: 0; }
 .brand:hover .lb1 { height: 14px; }
 .brand:hover .lb2 { height: 20px; }
 .brand:hover .lb3 { height: 8px; }
@@ -778,8 +778,11 @@ textarea { min-height: 120px; resize: vertical; font-family: inherit; }
 }
 @media (max-width: 900px) {
   :root { --section-space: 4.5rem; }
-  .menu-toggle { display: inline-flex; position: relative; flex-shrink: 0; order: 2; margin-left: auto; }
-  .nav-actions { order: 3; gap: 0.5rem; }
+  .brand { flex-shrink: 0; }
+  .menu-toggle { display: inline-flex; position: relative; flex-shrink: 0; order: 2; }
+  .nav-actions { order: 3; gap: 0.75rem; display: flex; align-items: center; margin-left: auto; }
+  .nav-cta { padding: 8px 16px; font-size: 12px; white-space: nowrap; flex-shrink: 0; }
+  .theme-toggle { width: 2.4rem; height: 2.4rem; flex-shrink: 0; }
   .nav-menu {
     position: absolute; top: calc(100% + 0.75rem); right: 0;
     flex-direction: column; align-items: stretch;
@@ -813,6 +816,12 @@ textarea { min-height: 120px; resize: vertical; font-family: inherit; }
   .hero-stat-divider { display: none; }
   .hero-actions { flex-direction: column; width: 100%; }
   .hero-actions .btn { width: 100%; }
+  .nav { padding: 0.75rem 1rem; }
+  .brand { gap: 6px; }
+  .logo-wordmark { font-size: 0.85rem; }
+  .nav-cta { padding: 7px 14px; font-size: 11px; letter-spacing: -0.02em; }
+  .theme-toggle { width: 2.25rem; height: 2.25rem; font-size: 0.9rem; }
+  .menu-toggle { width: 2.25rem; height: 2.25rem; }
   .pricing-card.featured { transform: scale(1); }
   .about-stats { grid-template-columns: 1fr; }
   .values-grid { grid-template-columns: 1fr; }

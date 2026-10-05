@@ -161,13 +161,6 @@ body[data-theme="dark"] .nav-menu a.active {
   background: var(--surface-soft); color: var(--p-200);
 }
 
-.nav-cta {
-  font-family: var(--heading-font); font-size: 13px; font-weight: 700;
-  background: var(--p-500); color: #fff; padding: 10px 22px;
-  border-radius: 999px; transition: all 0.25s; letter-spacing: -0.01em;
-}
-.nav-cta:hover { background: var(--p-600); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(83,74,183,0.3); color: #fff; }
-
 .theme-toggle {
   width: 2.75rem; height: 2.75rem; display: inline-flex; align-items: center; justify-content: center;
   border: 1px solid var(--border); background: transparent; color: var(--muted);
@@ -430,6 +423,19 @@ body[data-theme="dark"] .tag { background: var(--surface-soft); color: var(--p-2
 .stat { display: flex; flex-direction: column; }
 .stat-value { font-family: var(--heading-font); font-size: 1.25rem; font-weight: 700; color: var(--p-500); }
 .stat-label { font-size: 0.78rem; color: var(--muted); }
+.project-links { display: flex; margin-top: 1.25rem; }
+.project-link {
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  padding: 0.55rem 1rem; border-radius: 999px;
+  background: var(--p-500); color: #fff;
+  font-family: var(--heading-font); font-size: 0.78rem; font-weight: 700;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.project-link::after { content: "↗"; font-size: 0.9rem; }
+.project-link:hover, .project-link:focus-visible {
+  background: var(--p-600); color: #fff;
+  transform: translateY(-2px); box-shadow: 0 8px 20px rgba(83,74,183,0.25);
+}
 .portfolio-cta { text-align: center; margin-top: 3rem; padding: 2rem; background: var(--p-100); border-radius: var(--radius-lg); }
 body[data-theme="dark"] .portfolio-cta { background: var(--surface-soft); }
 .portfolio-cta p { margin-bottom: 1.5rem; }
@@ -779,9 +785,8 @@ textarea { min-height: 120px; resize: vertical; font-family: inherit; }
 @media (max-width: 900px) {
   :root { --section-space: 4.5rem; }
   .brand { flex-shrink: 0; }
-  .menu-toggle { display: inline-flex; position: relative; flex-shrink: 0; order: 2; }
-  .nav-actions { order: 3; gap: 0.75rem; display: flex; align-items: center; margin-left: auto; }
-  .nav-cta { padding: 8px 16px; font-size: 12px; white-space: nowrap; flex-shrink: 0; }
+  .menu-toggle { display: inline-flex; position: relative; flex-shrink: 0; order: 3; }
+  .nav-actions { order: 2; gap: 0.75rem; display: flex; align-items: center; margin-left: auto; }
   .theme-toggle { width: 2.4rem; height: 2.4rem; flex-shrink: 0; }
   .nav-menu {
     position: absolute; top: calc(100% + 0.75rem); right: 0;
@@ -819,7 +824,6 @@ textarea { min-height: 120px; resize: vertical; font-family: inherit; }
   .nav { padding: 0.75rem 1rem; }
   .brand { gap: 6px; }
   .logo-wordmark { font-size: 0.85rem; }
-  .nav-cta { padding: 7px 14px; font-size: 11px; letter-spacing: -0.02em; }
   .theme-toggle { width: 2.25rem; height: 2.25rem; font-size: 0.9rem; }
   .menu-toggle { width: 2.25rem; height: 2.25rem; }
   .pricing-card.featured { transform: scale(1); }

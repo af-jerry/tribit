@@ -105,6 +105,7 @@ p { color: var(--muted); line-height: 1.7; }
 }
 .section-tag::before { content: ''; width: 20px; height: 2px; background: var(--p-500); border-radius: 2px; }
 .section-heading { max-width: 720px; margin-bottom: 1.25rem; color: var(--text); }
+h1.section-heading { font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; }
 .section-description { font-size: 1.05rem; max-width: 600px; margin-top: 0.5rem; }
 .serif-italic { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; color: var(--p-500); }
 
@@ -413,6 +414,13 @@ body[data-theme="dark"] .portfolio-image { background: linear-gradient(135deg, v
 body[data-theme="dark"] .portfolio-image-placeholder { color: var(--p-200); }
 .preview-label { color: var(--p-500); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
 .portfolio-image-placeholder strong { font-family: var(--heading-font); font-size: 0.95rem; }
+.portfolio-image-bars { display: flex; align-items: flex-end; gap: 0.6rem; height: 5rem; }
+.pib { width: 0.8rem; border-radius: 0.2rem 0.2rem 0 0; background: var(--p-500); }
+.pib1 { height: 40%; background: var(--p-300); }
+.pib2 { height: 70%; background: var(--p-400); }
+.pib3 { height: 100%; background: var(--p-500); }
+.portfolio-image-label { color: var(--p-600); font-family: var(--heading-font); font-size: 0.85rem; font-weight: 700; text-align: center; }
+body[data-theme="dark"] .portfolio-image-label { color: var(--p-200); }
 
 .portfolio-content { padding: 1.5rem; flex: 1; min-width: 0; display: flex; flex-direction: column; }
 .portfolio-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }

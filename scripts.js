@@ -50,7 +50,11 @@ const revealObs = new IntersectionObserver((entries) => {
 reveals.forEach(el => { if (!el.classList.contains("active")) revealObs.observe(el); });
 
 // ── ACTIVE NAV SECTION ──
-const sections = navLinks.map(l => document.querySelector(l.getAttribute("href"))).filter(Boolean);
+const sections = navLinks
+  .map(link => link.getAttribute("href"))
+  .filter(href => href && href.startsWith("#"))
+  .map(href => document.querySelector(href))
+  .filter(Boolean);
 const sectionObs = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (!e.isIntersecting) return;
@@ -70,7 +74,6 @@ if (contactForm) {
   const phoneInput   = document.getElementById("phone");
   const subjectInput = document.getElementById("subject");
   const messageInput = document.getElementById("message");
-  const consentInput = document.getElementById("consent");
   const submitBtn    = contactForm.querySelector("button[type='submit']");
   const formStatus   = document.createElement("div");
   formStatus.id = "formStatus"; formStatus.setAttribute("aria-live","polite");
@@ -83,17 +86,14 @@ if (contactForm) {
   const validateEmail   = () => { if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value.trim())) { showError(emailInput);   return false; } showOk(emailInput);   return true; };
   const validateMessage = () => { if (messageInput.value.trim().length < 10)     { showError(messageInput); return false; } showOk(messageInput); return true; };
   const validateSubject = () => { if (!subjectInput.value.trim())                { showError(subjectInput); return false; } showOk(subjectInput); return true; };
-  const validateConsent = () => { if (!consentInput.checked)                     { showError(consentInput); return false; } showOk(consentInput); return true; };
-
   nameInput.addEventListener("blur",    validateName);
   emailInput.addEventListener("blur",   validateEmail);
   messageInput.addEventListener("blur", validateMessage);
   subjectInput.addEventListener("change", validateSubject);
-  consentInput.addEventListener("change", validateConsent);
 
   contactForm.addEventListener("submit", e => {
     e.preventDefault();
-    if (!(validateName() && validateEmail() && validateMessage() && validateSubject() && validateConsent())) {
+    if (!(validateName() && validateEmail() && validateMessage() && validateSubject())) {
       formStatus.textContent = "Please fix the highlighted fields."; formStatus.className = "error"; return;
     }
     submitBtn.classList.add("loading"); submitBtn.disabled = true;
@@ -107,7 +107,7 @@ if (contactForm) {
     emailjs.send("service_043kh2v", "template_hu3un3p", {
       from_name: nameInput.value.trim(), from_email: emailInput.value.trim(),
       company: companyInput.value.trim() || "Not provided", phone: phoneInput.value.trim() || "Not provided",
-      project_type: subjectInput.value, message: messageInput.value.trim(), to_email: "hello@tribo.app"
+      project_type: subjectInput.value, message: messageInput.value.trim(), to_email: "hello@tribit.dev"
     }).then(() => {
       formStatus.textContent = "✓ Thank you! We received your project details. We will contact you within 24 hours.";
       formStatus.className = "success"; contactForm.reset();
@@ -115,7 +115,7 @@ if (contactForm) {
       setTimeout(() => { formStatus.textContent = ""; formStatus.className = ""; }, 6000);
     }).catch(err => {
       console.error(err);
-      formStatus.textContent = "Failed to send. Please email us directly at hello@tribo.app";
+      formStatus.textContent = "Failed to send. Please email us directly at hello@tribit.dev";
       formStatus.className = "error";
     }).finally(() => { submitBtn.classList.remove("loading"); submitBtn.disabled = false; });
   });
@@ -131,19 +131,6 @@ faqItems.forEach(item => {
   });
 });
 
-// ── NEWSLETTER ──
-const newsletterForm = document.getElementById("newsletterForm");
-if (newsletterForm) {
-  newsletterForm.addEventListener("submit", e => {
-    e.preventDefault();
-    const inp = newsletterForm.querySelector("input[type='email']");
-    const btn = newsletterForm.querySelector("button");
-    if (!inp.value.trim()) return;
-    const orig = btn.innerHTML; btn.innerHTML = '<i class="fas fa-check"></i>'; btn.disabled = true;
-    setTimeout(() => { inp.value = ""; btn.innerHTML = orig; btn.disabled = false; }, 2000);
-  });
-}
-
 // ── SMOOTH SCROLL ──
 document.addEventListener("click", e => {
   const link = e.target.closest("a[href^='#']");
@@ -156,7 +143,10 @@ document.addEventListener("click", e => {
 // ── SCROLL RESTORATION ──
 if ("scrollRestoration" in history) history.scrollRestoration = "manual";
 function resetToTop() {
-  if (window.location.hash) history.replaceState(null,"", window.location.pathname + window.location.search);
+  if (window.location.hash && !document.getElementById(window.location.hash.slice(1))) {
+    history.replaceState(null,"", window.location.pathname + window.location.search);
+  }
+  if (window.location.hash) return;
   window.scrollTo({ top: 0, left: 0, behavior: "auto" });
 }
 window.addEventListener("load", resetToTop);

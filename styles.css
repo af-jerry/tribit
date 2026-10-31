@@ -855,6 +855,7 @@ body[data-theme="dark"] .policy-content a { color: var(--p-300); }
 }
 @media (max-width: 640px) {
   .portfolio-grid { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
+  .project-link::after { display: none; }
   .portfolio-card,
   .portfolio-card:nth-last-child(2):nth-child(3n + 1),
   .portfolio-card:last-child:nth-child(3n + 2),

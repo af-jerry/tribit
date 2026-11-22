@@ -860,10 +860,10 @@ body[data-theme="dark"] .policy-content a { color: var(--p-300); }
 @media (max-width: 900px) {
   :root { --section-space: 4.5rem; }
   .brand { flex-shrink: 0; }
-  .js .menu-toggle { display: inline-flex; position: relative; flex-shrink: 0; order: 3; }
+  :is(.js, .home-nav-pending) .menu-toggle { display: inline-flex; position: relative; flex-shrink: 0; order: 3; }
   .nav-actions { order: 2; gap: 0.75rem; display: flex; align-items: center; margin-left: auto; }
   .theme-toggle { width: 2.4rem; height: 2.4rem; flex-shrink: 0; }
-  .js .nav-menu {
+  :is(.js, .home-nav-pending) .nav-menu {
     position: absolute; top: calc(100% + 0.75rem); right: 0;
     flex-direction: column; align-items: stretch;
     min-width: min(88vw, 300px); padding: 0.75rem;
@@ -874,8 +874,8 @@ body[data-theme="dark"] .policy-content a { color: var(--p-300); }
     z-index: 1001; transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
   }
   .js .nav-menu.active { opacity: 1; visibility: visible; transform: translateY(0); pointer-events: auto; }
-  html:not(.js) .nav, html:not(.js) .nav-menu { flex-wrap: wrap; }
-  html:not(.js) .nav-actions { margin-left: 0; }
+  html:not(.js, .home-nav-pending) .nav, html:not(.js, .home-nav-pending) .nav-menu { flex-wrap: wrap; }
+  html:not(.js, .home-nav-pending) .nav-actions { margin-left: 0; }
   .nav-menu a { display: block; border-radius: var(--radius-sm); }
   .process-steps { grid-template-columns: repeat(2,1fr); gap: 2rem; }
   .process-steps::before { display: none; }

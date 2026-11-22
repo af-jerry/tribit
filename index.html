@@ -28,7 +28,14 @@
     <link rel="icon" type="image/png" href="tribit-favicon-dark.png">
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link rel="stylesheet" href="/styles.css?v=seo-1"/>
+    <script>
+      // Reserve the compact mobile header before the main script loads.
+      document.documentElement.classList.add("home-nav-pending");
+      document.addEventListener("DOMContentLoaded", () => {
+        document.documentElement.classList.remove("home-nav-pending");
+      }, { once: true });
+    </script>
+    <link rel="stylesheet" href="/styles.css?v=hero-cls-1"/>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous"/>
 
@@ -107,7 +114,7 @@
 <main>
 <!-- ── HERO ── -->
 <section class="hero" id="home">
-  <div class="hero-geo">
+  <div class="hero-geo" aria-hidden="true">
     <div class="geo-ring gr1"></div>
     <div class="geo-ring gr2"></div>
     <div class="geo-ring gr3"></div>

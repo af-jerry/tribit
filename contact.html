@@ -2,30 +2,63 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
+    <meta
+  property="og:image"
+  content="https://tribit.dev/assets/images/tribit-social-preview.png"
+>
+
+<meta
+  name="twitter:image"
+  content="https://tribit.dev/assets/images/tribit-social-preview.png"
+>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Contact Tribit | Get a Free Website Audit</title>
-    <meta name="description" content="Get in touch with Tribit to discuss your website or web application project. Request a website audit and hear back within 24 hours."/>
-    <meta name="keywords" content="web development Ghana, web design Accra, African web agency, e-commerce Africa, SEO Ghana, custom web apps"/>
+    <title>Contact Tribit | Start Your Website Project</title>
+    <meta name="description" content="Talk to Tribit about a new website, redesign, or web application. Tell us about your project or request a free website audit."/>
     <meta name="author" content="Tribit"/>
-    <meta property="og:title" content="Contact Tribit"/>
-    <meta property="og:description" content="Let's start your project. Tell Tribit about your website or web application needs."/>
+    <link rel="canonical" href="https://tribit.dev/contact"/>
     <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Contact Tribit | Start Your Website Project"/>
+    <meta property="og:description" content="Talk to Tribit about a new website, redesign, or web application. Tell us about your project or request a free website audit."/>
+    <meta property="og:url" content="https://tribit.dev/contact"/>
+    <meta property="og:site_name" content="Tribit"/>
+    <meta property="og:locale" content="en_GH"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Contact Tribit | Start Your Website Project"/>
+    <meta name="twitter:description" content="Talk to Tribit about a new website, redesign, or web application. Tell us about your project or request a free website audit."/>
     <link rel="icon" type="image/png" href="tribit-favicon-dark.png">
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link rel="stylesheet" href="styles.css?v=portfolio-layout-3"/>
+    <link rel="stylesheet" href="/styles.css?v=seo-1"/>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous"/>
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ContactPage",
+          "@id": "https://tribit.dev/contact#webpage",
+          "url": "https://tribit.dev/contact",
+          "name": "Contact Tribit | Start Your Website Project",
+          "description": "Talk to Tribit about a new website, redesign, or web application. Tell us about your project or request a free website audit.",
+          "isPartOf": {
+            "@id": "https://tribit.dev/#website"
+          },
+          "inLanguage": "en"
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
 <div class="page-shell">
 <!-- ── NAV ── -->
 <header class="site-header">
   <nav class="nav container" aria-label="Primary">
-    <a href="index.html" class="brand" aria-label="Tribit home">
-      <div class="logo-mark">
+    <a href="/" class="brand" aria-label="Tribit home">
+      <div class="logo-mark" aria-hidden="true">
         <div class="logo-bar lb1"></div>
         <div class="logo-bar lb2"></div>
         <div class="logo-bar lb3"></div>
@@ -34,21 +67,21 @@
     </a>
 
     <div class="nav-actions">
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span>
+      </button>
       <ul id="navMenu" class="nav-menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/portfolio">Portfolio</a></li>
+        <li><a href="/about">About</a></li>
         <!-- <li><a href="#pricing">Pricing</a></li> -->
-        <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
+        <li><a href="/contact" class="active" aria-current="page">Contact</a></li>
       </ul>
       <button id="themeToggle" class="theme-toggle" type="button" aria-label="Switch color theme" title="Switch color theme">
         <i class="fa-solid fa-moon"></i>
       </button>
     </div>
-    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navMenu">
-      <span></span><span></span>
-    </button>
   </nav>
 </header>
 
@@ -65,24 +98,25 @@
       <div class="contact-info reveal">
         <div class="contact-method">
           <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-          <h4>Email</h4>
+          <h2>Email</h2>
           <p><a href="mailto:hello@tribit.dev">hello@tribit.dev</a></p>
           <p class="small">We respond within 24 hours</p>
         </div>
         <div class="contact-method">
           <div class="contact-icon"><i class="fas fa-phone"></i></div>
-          <h4>Phone</h4>
+          <h2>Phone</h2>
           <p><a href="tel:+233537594823">+233 537 594 823</a></p>
           <p class="small">Mon–Fri, 9AM–6PM GMT</p>
         </div>
         <div class="contact-method">
           <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
-          <h4>WhatsApp</h4>
-          <p><a href="https://wa.me/233537594823" target="_blank" rel="noopener">Message us on WhatsApp</a></p>
+          <h2>WhatsApp</h2>
+          <p><a href="https://wa.me/233537594823" target="_blank" rel="noopener noreferrer">Message us on WhatsApp</a></p>
           <p class="small">Quick responses available</p>
         </div>
       </div>
-      <form class="contact-form reveal reveal-d2" id="contactForm" >
+      <form class="contact-form reveal reveal-d2"
+      id="contactForm" method="post">
         <div class="form-group">
           <label for="name">Full Name *</label>
           <input type="text" id="name" name="name" required placeholder="John Doe"/>
@@ -104,10 +138,10 @@
           <select id="subject" name="subject" required>
             <option value="">Select a project type</option>
             <option value="website_development">Website Development</option>
-            <option value="website_redesign">Website Design</option>
-            <option value="web_app">Web Redesign</option>
-            <option value="web_app">Business Website</option>
-            <option value="web_app">Portfolio Website</option>
+            <option value="website_design">Website Design</option>
+            <option value="web_redesign">Web Redesign</option>
+            <option value="business_website">Business Website</option>
+            <option value="portfolio_website">Portfolio Website</option>
             <option value="ecommerce">E-Commerce Store</option>
             <option value="seo">SEO Optimization</option>
             <option value="maintenance">Maintenance & Support</option>
@@ -118,8 +152,12 @@
           <label for="message">Tell us about your project *</label>
           <textarea id="message" name="message" rows="5" required placeholder="Describe your project, goals, and any specific requirements..."></textarea>
         </div>
-        <button type="submit" class="btn btn-primary btn-lg btn-block">Send Project Details</button>
-        <p class="form-privacy-notice">By submitting this form, you ask Tribit to use your details to respond to your inquiry and discuss your project. See our <a href="privacy-policy.html">Privacy Policy</a> for details.</p>
+        <button type="submit"
+        class="btn btn-primary btn-lg btn-block"
+        disabled>
+  Send Project Details
+</button>
+        <p class="form-privacy-notice">By submitting this form, you ask Tribit to use your details to respond to your inquiry and discuss your project. See our <a href="/privacy-policy">Privacy Policy</a> for details.</p>
         <p class="form-note">We will review your details and get back to you with a customized proposal.</p>
       </form>
     </div>
@@ -135,7 +173,7 @@
     <div class="footer-content">
       <div class="footer-section">
         <div class="footer-logo">
-          <div class="logo-mark">
+          <div class="logo-mark" aria-hidden="true">
             <div class="logo-bar lb1"></div>
             <div class="logo-bar lb2"></div>
             <div class="logo-bar lb3"></div>
@@ -144,34 +182,35 @@
         </div>
         <p>Web development services that grow businesses in Ghana and beyond. Built from friction.</p>
         <div class="social-links">
-          <a href="#" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+     <!---    <a href="#" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="#" title="Twitter / X" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+        -->
           <a href="https://www.linkedin.com/company/tribit.dev/home/?viewAsMember=true" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+       <!---  <a href="#" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a> -->
         </div>
       </div>
       <div class="footer-section">
-        <h4>Services</h4>
+        <h2>Services</h2>
         <ul>
-          <li><a href="services.html">Web Development</a></li>
-          <li><a href="services.html">E-Commerce</a></li>
-          <li><a href="services.html">SEO & Performance</a></li>
-          <li><a href="services.html">UI/UX Design</a></li>
-          <li><a href="services.html">Maintenance</a></li>
+          <li><a href="/services">Web Development</a></li>
+          <li><a href="/services">E-Commerce</a></li>
+          <li><a href="/services">SEO & Performance</a></li>
+          <li><a href="/services">UI/UX Design</a></li>
+          <li><a href="/services">Maintenance</a></li>
         </ul>
       </div>
       <div class="footer-section">
-        <h4>Company</h4>
+        <h2>Company</h2>
         <ul>
-          <li><a href="about.html">About Tribit</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="services.html#process">Our Process</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="/about">About Tribit</a></li>
+          <li><a href="/portfolio">Portfolio</a></li>
+          <li><a href="/services#process">Our Process</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
         </ul>
       </div>
       <div class="footer-section">
-        <h4>Get In Touch</h4>
+        <h2>Get In Touch</h2>
         <p>Have a project in mind? Reach out and let's talk.</p>
         <a class="footer-contact-link" href="mailto:hello@tribit.dev">hello@tribit.dev</a>
       </div>

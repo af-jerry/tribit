@@ -129,6 +129,7 @@ body[data-theme="dark"] .lb3 { background: var(--p-200); }
    NAVIGATION
    ============================================= */
 .site-header { position: sticky; top: 0; z-index: 1000; padding: 1rem 0; }
+#process { scroll-margin-top: 6rem; }
 
 .nav {
   display: flex; align-items: center; justify-content: space-between; gap: 1rem;
@@ -208,12 +209,48 @@ body[data-theme="dark"] .nav-menu a.active {
 /* =============================================
    REVEAL ANIMATIONS
    ============================================= */
-.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
-.reveal.active { opacity: 1; transform: translateY(0); }
+
+/* ==========================================
+   TRIBIT — SCROLL REVEAL ANIMATIONS
+   ========================================== */
+
+/* Content is visible by default */
+.reveal {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+/* Hide elements only when JavaScript is active */
+.js .reveal:not(.visible):not(.active):not(:focus-within) {
+  opacity: 0;
+  transform: translateY(28px);
+}
+
+/* Reveal elements when they enter the viewport */
+.reveal.visible,
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered animation delays */
 .reveal-d1 { transition-delay: 0.1s; }
 .reveal-d2 { transition-delay: 0.2s; }
 .reveal-d3 { transition-delay: 0.3s; }
 .reveal-d4 { transition-delay: 0.4s; }
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 
 /* =============================================
    HERO
@@ -420,7 +457,7 @@ body[data-theme="dark"] .portfolio-image-placeholder { color: var(--p-200); }
   text-transform: uppercase; letter-spacing: 0.05em;
 }
 body[data-theme="dark"] .tag { background: var(--surface-soft); color: var(--p-200); }
-.portfolio-card h3 { font-size: 1.1rem; margin: 0 0 0.75rem; overflow-wrap: anywhere; }
+.portfolio-card h2 { font-size: 1.1rem; margin: 0 0 0.75rem; overflow-wrap: anywhere; }
 .portfolio-description { flex: 1; margin: 0 0 1.25rem; font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
 .portfolio-stats { display: flex; gap: 2rem; padding-top: 1.25rem; border-top: 1px solid var(--border); }
 .stat { display: flex; flex-direction: column; }
@@ -496,7 +533,7 @@ body[data-theme="dark"] .about-section { background: linear-gradient(135deg, var
   transition: transform 0.3s, box-shadow 0.3s;
 }
 .value-item:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
-.value-item h4 { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.6rem; color: var(--p-500); font-size: 0.95rem; }
+.value-item h2 { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.6rem; color: var(--p-500); font-size: 0.95rem; }
 .value-item p { font-size: 0.85rem; line-height: 1.6; }
 
 .about-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
@@ -639,10 +676,12 @@ body[data-theme="dark"] .pricing-note { background: var(--surface-soft); }
   gap: 1rem; text-align: left; color: var(--text); font-weight: 700; font-size: 0.95rem;
   transition: background 0.25s;
 }
+.faq-question { margin: 0; }
 .faq-header:hover { background: var(--surface-soft); }
 .faq-header i { transition: transform 0.3s; flex-shrink: 0; color: var(--p-400); }
 .faq-item.faq-open .faq-header i { transform: rotate(180deg); }
 .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; padding: 0 1.5rem; }
+html:not(.js) .faq-content,
 .faq-item.faq-open .faq-content { max-height: 500px; padding: 0 1.5rem 1.5rem; }
 .faq-content p { font-size: 0.9rem; line-height: 1.7; }
 
@@ -678,7 +717,7 @@ body[data-theme="dark"] .pricing-note { background: var(--surface-soft); }
   margin: 0 auto 1rem; color: var(--p-500);
 }
 body[data-theme="dark"] .contact-icon { background: var(--surface-soft); color: var(--p-300); }
-.contact-method h4 { margin-bottom: 0.5rem; }
+.contact-method h2 { font-size: 1rem; margin-bottom: 0.5rem; }
 .contact-method p { font-size: 0.88rem; margin-bottom: 0.35rem; }
 .contact-method a { color: var(--p-500); font-weight: 700; }
 .contact-method a:hover { color: var(--p-400); }
@@ -738,7 +777,7 @@ body[data-theme="dark"] .form-privacy-notice a { color: var(--p-300); }
 .footer-logo .lb3 { background: var(--p-500); }
 .footer-logo .logo-wordmark { color: white; }
 .footer-section p { font-size: 0.88rem; color: var(--p-300); line-height: 1.7; margin-bottom: 1.25rem; max-width: 240px; }
-.footer-section h4 { font-family: var(--heading-font); font-size: 13px; font-weight: 700; color: white; margin-bottom: 1.25rem; letter-spacing: -0.01em; }
+.footer-section h2 { font-family: var(--heading-font); font-size: 13px; font-weight: 700; color: white; margin-bottom: 1.25rem; letter-spacing: -0.01em; }
 .footer-section ul { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
 .footer-section ul a { font-size: 0.88rem; color: var(--p-300); transition: color 0.2s; }
 .footer-section ul a:hover { color: white; }
@@ -821,10 +860,10 @@ body[data-theme="dark"] .policy-content a { color: var(--p-300); }
 @media (max-width: 900px) {
   :root { --section-space: 4.5rem; }
   .brand { flex-shrink: 0; }
-  .menu-toggle { display: inline-flex; position: relative; flex-shrink: 0; order: 3; }
+  .js .menu-toggle { display: inline-flex; position: relative; flex-shrink: 0; order: 3; }
   .nav-actions { order: 2; gap: 0.75rem; display: flex; align-items: center; margin-left: auto; }
   .theme-toggle { width: 2.4rem; height: 2.4rem; flex-shrink: 0; }
-  .nav-menu {
+  .js .nav-menu {
     position: absolute; top: calc(100% + 0.75rem); right: 0;
     flex-direction: column; align-items: stretch;
     min-width: min(88vw, 300px); padding: 0.75rem;
@@ -834,7 +873,9 @@ body[data-theme="dark"] .policy-content a { color: var(--p-300); }
     opacity: 0; visibility: hidden; transform: translateY(-10px); pointer-events: none;
     z-index: 1001; transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
   }
-  .nav-menu.active { opacity: 1; visibility: visible; transform: translateY(0); pointer-events: auto; }
+  .js .nav-menu.active { opacity: 1; visibility: visible; transform: translateY(0); pointer-events: auto; }
+  html:not(.js) .nav, html:not(.js) .nav-menu { flex-wrap: wrap; }
+  html:not(.js) .nav-actions { margin-left: 0; }
   .nav-menu a { display: block; border-radius: var(--radius-sm); }
   .process-steps { grid-template-columns: repeat(2,1fr); gap: 2rem; }
   .process-steps::before { display: none; }

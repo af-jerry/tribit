@@ -2,29 +2,62 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
+    <meta
+  property="og:image"
+  content="https://tribit.dev/assets/images/tribit-social-preview.png"
+>
+
+<meta
+  name="twitter:image"
+  content="https://tribit.dev/assets/images/tribit-social-preview.png"
+>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Portfolio & Projects | Tribit</title>
-    <meta name="description" content="Browse Tribit's web development projects, including live website demos for inventory management, a cafe, a salon, and a clothing brand."/>
-    <meta name="keywords" content="web development Ghana, web design Accra, African web agency, e-commerce Africa, SEO Ghana, custom web apps"/>
+    <title>Web Development Projects | Tribit Portfolio</title>
+    <meta name="description" content="Explore Tribit’s web development projects, with demos for an inventory management system, a coffee shop, a salon, and a clothing brand."/>
     <meta name="author" content="Tribit"/>
-    <meta property="og:title" content="Tribit Portfolio | Featured Projects"/>
-    <meta property="og:description" content="Explore featured Tribit websites and live project demos."/>
+    <link rel="canonical" href="https://tribit.dev/portfolio"/>
     <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Web Development Projects | Tribit Portfolio"/>
+    <meta property="og:description" content="Explore Tribit’s web development projects, with demos for an inventory management system, a coffee shop, a salon, and a clothing brand."/>
+    <meta property="og:url" content="https://tribit.dev/portfolio"/>
+    <meta property="og:site_name" content="Tribit"/>
+    <meta property="og:locale" content="en_GH"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Web Development Projects | Tribit Portfolio"/>
+    <meta name="twitter:description" content="Explore Tribit’s web development projects, with demos for an inventory management system, a coffee shop, a salon, and a clothing brand."/>
     <link rel="icon" type="image/png" href="tribit-favicon-dark.png">
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link rel="stylesheet" href="styles.css?v=portfolio-layout-3"/>
+    <link rel="stylesheet" href="/styles.css?v=seo-1"/>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous"/>
 
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "CollectionPage",
+          "@id": "https://tribit.dev/portfolio#webpage",
+          "url": "https://tribit.dev/portfolio",
+          "name": "Web Development Projects | Tribit Portfolio",
+          "description": "Explore Tribit’s web development projects, with demos for an inventory management system, a coffee shop, a salon, and a clothing brand.",
+          "isPartOf": {
+            "@id": "https://tribit.dev/#website"
+          },
+          "inLanguage": "en"
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
 <div class="page-shell">
 <!-- ── NAV ── -->
 <header class="site-header">
   <nav class="nav container" aria-label="Primary">
-    <a href="index.html" class="brand" aria-label="Tribit home">
-      <div class="logo-mark">
+    <a href="/" class="brand" aria-label="Tribit home">
+      <div class="logo-mark" aria-hidden="true">
         <div class="logo-bar lb1"></div>
         <div class="logo-bar lb2"></div>
         <div class="logo-bar lb3"></div>
@@ -33,21 +66,21 @@
     </a>
 
     <div class="nav-actions">
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span>
+      </button>
       <ul id="navMenu" class="nav-menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="portfolio.html" class="active" aria-current="page">Portfolio</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/portfolio" class="active" aria-current="page">Portfolio</a></li>
+        <li><a href="/about">About</a></li>
         <!-- <li><a href="#pricing">Pricing</a></li> -->
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="/contact">Contact</a></li>
       </ul>
       <button id="themeToggle" class="theme-toggle" type="button" aria-label="Switch color theme" title="Switch color theme">
         <i class="fa-solid fa-moon"></i>
       </button>
     </div>
-    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navMenu">
-      <span></span><span></span>
-    </button>
   </nav>
 </header>
 
@@ -58,7 +91,7 @@
     <div class="section-header reveal">
       <p class="section-tag">Our Work</p>
       <h1 class="section-heading">Featured <span class="serif-italic">projects.</span></h1>
-      <p class="section-description">Browse live website demos and clearly labeled concepts from the kinds of digital experiences we build.</p>
+      <p class="section-description">Browse live demos from the kinds of websites and applications we build.</p>
     </div>
     <div class="portfolio-grid">
 
@@ -95,10 +128,10 @@
         </div>
         <div class="portfolio-content">
           <div class="portfolio-tags"><span class="tag">Web Development</span><span class="tag">SEO</span></div>
-          <h3>Inventory Management System</h3>
+          <h2>Inventory Management System</h2>
           <p class="portfolio-description">Modern inventory management website to keep track of stocks in real-time, automated alerts and order and supplier management.</p>
           <div class="project-links" aria-label="Project links">
-            <a class="project-link" href="https://grp-inventory.duckdns.org/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+            <a class="project-link" href="https://grp-inventory.duckdns.org/" target="_blank" rel="noopener noreferrer" aria-label="Live Demo: Inventory Management System">Live Demo</a>
           </div>
         </div>
       </div>
@@ -109,10 +142,10 @@
         </div>
         <div class="portfolio-content">
           <div class="portfolio-tags"><span class="tag">Web Development</span><span class="tag">SEO</span></div>
-          <h3>Spring Coffee</h3>
+          <h2>Spring Coffee</h2>
           <p class="portfolio-description">A polished cafe website that showcases the menu, atmosphere, and paths to place an order.</p>
           <div class="project-links" aria-label="Project links">
-            <a class="project-link" href="https://af-jerry.github.io/coffee-shop-website/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+            <a class="project-link" href="https://af-jerry.github.io/coffee-shop-website/" target="_blank" rel="noopener noreferrer" aria-label="Live Demo: Spring Coffee">Live Demo</a>
           </div>
         </div>
       </div>
@@ -123,10 +156,10 @@
         </div>
         <div class="portfolio-content">
           <div class="portfolio-tags"><span class="tag">Web Development</span><span class="tag">SEO</span></div>
-          <h3>Forme</h3>
+          <h2>Forme</h2>
           <p class="portfolio-description">A modern salon website designed to present services and make appointment booking easy.</p>
           <div class="project-links" aria-label="Project links">
-            <a class="project-link" href="https://seashell-mosquito-644918.hostingersite.com/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+            <a class="project-link" href="https://seashell-mosquito-644918.hostingersite.com/" target="_blank" rel="noopener noreferrer" aria-label="Live Demo: Forme">Live Demo</a>
           </div>
         </div>
       </div>
@@ -138,10 +171,10 @@
         </div>
         <div class="portfolio-content">
           <div class="portfolio-tags"><span class="tag">Web Development</span><span class="tag">SEO</span></div>
-          <h3>Vintaire</h3>
+          <h2>Vintaire</h2>
           <p class="portfolio-description">A clothing brand  website designed to allow customers to make purchases at their own convenience.</p>
           <div class="project-links" aria-label="Project links">
-            <a class="project-link" href="https://mistyrose-stork-154646.hostingersite.com" target="_blank" rel="noopener noreferrer">Live Demo</a>
+            <a class="project-link" href="https://mistyrose-stork-154646.hostingersite.com" target="_blank" rel="noopener noreferrer" aria-label="Live Demo: Vintaire">Live Demo</a>
           </div>
         </div>
       </div>
@@ -150,7 +183,7 @@
     </div>
     <div class="portfolio-cta reveal">
       <p><strong>Not sure if your business needs a website?</strong>We’ll review your current online presence and show you exactly how you can get more customers.</p>
-      <a href="contact.html" class="btn btn-primary" style="margin-top:1rem;">Get a Free <strong>Website Audit</strong></a>
+      <a href="/contact" class="btn btn-primary" style="margin-top:1rem;">Get a Free <strong>Website Audit</strong></a>
     </div>
   </div>
 </section>
@@ -164,7 +197,7 @@
     <div class="footer-content">
       <div class="footer-section">
         <div class="footer-logo">
-          <div class="logo-mark">
+          <div class="logo-mark" aria-hidden="true">
             <div class="logo-bar lb1"></div>
             <div class="logo-bar lb2"></div>
             <div class="logo-bar lb3"></div>
@@ -173,7 +206,7 @@
         </div>
         <p>Web development services that grow businesses in Ghana and beyond. Built from friction.</p>
         <div class="social-links">
-       <!--   <a href="#" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+     <!---    <a href="#" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="#" title="Twitter / X" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
         -->
           <a href="https://www.linkedin.com/company/tribit.dev/home/?viewAsMember=true" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
@@ -181,27 +214,27 @@
         </div>
       </div>
       <div class="footer-section">
-        <h4>Services</h4>
+        <h2>Services</h2>
         <ul>
-          <li><a href="services.html">Web Development</a></li>
-          <li><a href="services.html">E-Commerce</a></li>
-          <li><a href="services.html">SEO & Performance</a></li>
-          <li><a href="services.html">UI/UX Design</a></li>
-          <li><a href="services.html">Maintenance</a></li>
+          <li><a href="/services">Web Development</a></li>
+          <li><a href="/services">E-Commerce</a></li>
+          <li><a href="/services">SEO & Performance</a></li>
+          <li><a href="/services">UI/UX Design</a></li>
+          <li><a href="/services">Maintenance</a></li>
         </ul>
       </div>
       <div class="footer-section">
-        <h4>Company</h4>
+        <h2>Company</h2>
         <ul>
-          <li><a href="about.html">About Tribit</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="services.html#process">Our Process</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="/about">About Tribit</a></li>
+          <li><a href="/portfolio">Portfolio</a></li>
+          <li><a href="/services#process">Our Process</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
         </ul>
       </div>
       <div class="footer-section">
-        <h4>Get In Touch</h4>
+        <h2>Get In Touch</h2>
         <p>Have a project in mind? Reach out and let's talk.</p>
         <a class="footer-contact-link" href="mailto:hello@tribit.dev">hello@tribit.dev</a>
       </div>
